@@ -1,10 +1,10 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-export default function Feed() {
+export default function Profile() {
   return (
     <View>
-      <Text>Feed</Text>
+      <Text>profile</Text>
     </View>
   )
 }
