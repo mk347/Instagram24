@@ -1,17 +1,17 @@
 import { Image, Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import * as ImagePicker from 'expo-image-picker';
+import Button from '../../components/Button';
 
 export default function CreatePost() {
     const [caption, setCaption] = useState('');
     const [image, setImage] = useState<string | null>(null);
 
     useEffect(() => {
-      if(!image) {
-        pickImage();
-      }
-    }, [image])
-    
+        if (!image) {
+            pickImage();
+        }
+    }, [image]);
 
     const pickImage = async () => {
         // No permissions request is necessary for launching the image library
@@ -32,12 +32,16 @@ export default function CreatePost() {
     return (
         <View className='p-3 items-center flex-1'>
             {/* Image Picker */}
-            <Image
-                source={{
-                    uri: image,
-                }}
-                className='w-52 aspect-[4/3] rounded-lg'
-            />
+            {image ? (
+                <Image
+                    source={{
+                        uri: image,
+                    }}
+                    className='w-52 aspect-[4/3] rounded-lg'
+                />
+            ) : (
+                <View className='w-52 aspect-[4/3] rounded-lg bg-slate-300' />
+            )}
             <Text onPress={pickImage} className='text-blue-500 font-semibold m-5'>
                 Change
             </Text>
@@ -52,9 +56,7 @@ export default function CreatePost() {
 
             {/* Button */}
             <View className='mt-auto'>
-                <Pressable className='bg-blue-500 w-full p-3 items-center rounded-md' onPress={() => {}}>
-                    <Text className='text-white font-semibold'>Share</Text>
-                </Pressable>
+              <Button title="Share" />
             </View>
         </View>
     );

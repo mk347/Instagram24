@@ -21,7 +21,7 @@ export default function PostListItem({ post }: Post) {
     return (
         <View className='bg-white'>
             <View className='flex-row items-center gap-3 p-3'>
-                <Image source={{ uri: post?.user.image_url }} className='w-14 aspect-square rounded-full' />
+                <Image source={{ uri: post?.user.image_url }} className='w-12 aspect-square rounded-full' />
                 <Text className='font-semibold'>{post.user.username}</Text>
             </View>
             <Image source={{ uri: post?.image_url }} className='w-full aspect-square' />

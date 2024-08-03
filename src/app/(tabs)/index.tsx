@@ -1,6 +1,6 @@
 import { FlatList } from 'react-native';
 import React from 'react';
-import posts from '~/assets/data/posts.json';
+import posts from '../../../assets/data/posts.json';
 import PostListItem from '../../components/PostListItem';
 
 export default function FeedScreen() {
