@@ -3,7 +3,7 @@ import React from 'react';
 
 type ButtonProps = {
     title: string,
-    onPress: () => void,
+    onPress?: () => void,
 }
 
 export default function Button({ title, onPress }: ButtonProps) {
