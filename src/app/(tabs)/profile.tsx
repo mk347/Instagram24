@@ -2,6 +2,7 @@ import { Image, Pressable, StyleSheet, Text, TextInput, View } from 'react-nativ
 import React, { useEffect, useState } from 'react';
 import * as ImagePicker from 'expo-image-picker';
 import Button from '../../components/Button';
+import { supabase } from '../../lib/supabase';
 
 export default function CreatePost() {
     const [image, setImage] = useState<string | null>(null);
@@ -58,7 +59,7 @@ export default function CreatePost() {
             {/* Button */}
             <View className='gap-3 mt-auto'>
                 <Button title='Update Profile' />
-                <Button title='Sign Out' />
+                <Button title='Sign Out' onPress={() => supabase.auth.signOut()} />
             </View>
         </View>
     );

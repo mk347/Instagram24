@@ -30,8 +30,6 @@ export default function CreatePost() {
         }
     };
 
-
-
     const createPost = async () => {
         if (!image) {
             return;
