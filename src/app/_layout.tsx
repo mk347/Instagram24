@@ -9,7 +9,7 @@ export default function RootLayout() {
         <AuthProvider>
             <Stack screenOptions={{ headerShown: false }} />
         </AuthProvider>
-    )
+    );
 }
 
 const styles = StyleSheet.create({});

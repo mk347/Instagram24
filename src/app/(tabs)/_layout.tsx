@@ -2,11 +2,12 @@ import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { Redirect, Tabs } from 'expo-router';
 import { FontAwesome } from '@expo/vector-icons';
-import { useAuth } from '../../providers/AuthProvider';
+import { useAuth } from '~/src/providers/AuthProvider';
 
 export default function TabsLayout() {
     const { isAuthenticated } = useAuth();
 
+    // Redirect guest user to auth screen
     if (!isAuthenticated) {
         return <Redirect href='/(auth)' />;
     }
